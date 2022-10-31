@@ -10,6 +10,7 @@ class CreateReviews < ActiveRecord::Migration[7.0]
       t.string :video
       t.text :description
       t.integer :score
+      t.string :verification_status
 
       t.timestamps
     end
