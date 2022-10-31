@@ -31,8 +31,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_31_221022) do
     t.string "linkedin"
     t.string "tiktok"
     t.string "timezone"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_companies_on_user_id"
   end
 
   create_table "invitations", force: :cascade do |t|
@@ -56,7 +58,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_31_221022) do
     t.string "order_id"
     t.string "source"
     t.string "video"
-    t.string "description"
+    t.text "description"
     t.integer "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -82,6 +84,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_31_221022) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "companies", "users"
   add_foreign_key "invitations", "companies"
   add_foreign_key "reviews", "companies"
   add_foreign_key "reviews", "users"

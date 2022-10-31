@@ -17,6 +17,7 @@ class CreateCompanies < ActiveRecord::Migration[7.0]
       t.string :linkedin
       t.string :tiktok
       t.string :timezone
+      t.references :user, null: true, foreign_key: true
 
       t.timestamps
     end

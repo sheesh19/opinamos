@@ -8,7 +8,7 @@ class CreateReviews < ActiveRecord::Migration[7.0]
       t.string :order_id
       t.string :source
       t.string :video
-      t.string :description
+      t.text :description
       t.integer :score
 
       t.timestamps
