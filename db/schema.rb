@@ -60,6 +60,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_31_221022) do
     t.string "video"
     t.text "description"
     t.integer "score"
+    t.string "verification_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["company_id"], name: "index_reviews_on_company_id"
