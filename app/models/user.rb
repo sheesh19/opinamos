@@ -13,4 +13,8 @@ class User < ApplicationRecord
   def admin?
     role == 'admin'
   end
+
+  def owner?
+    role == 'owner' || company.present?
+  end
 end

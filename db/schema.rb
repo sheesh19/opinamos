@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_05_214949) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_31_221022) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -60,6 +60,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_05_214949) do
     t.string "video"
     t.text "description"
     t.integer "score"
+    t.string "verification_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["company_id"], name: "index_reviews_on_company_id"
@@ -79,7 +80,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_05_214949) do
     t.string "phone_number"
     t.string "role"
     t.bigint "company_id"
-    t.boolean "admin"
     t.index ["company_id"], name: "index_users_on_company_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

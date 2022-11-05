@@ -1,0 +1,7 @@
+<h2>Dashboard</h2>
+
+<%= link_to 'Subscription', subscription_path, class: 'btn btn-primary' %>
+
+<% if current_user.owner? %>
+    <%= link_to 'Edit Company Details', edit_company_path(current_user.company), class: 'btn btn-primary' %>
+<% end %>
