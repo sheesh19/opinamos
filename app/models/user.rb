@@ -8,4 +8,13 @@ class User < ApplicationRecord
   has_many :reviews
 
   validates :first_name, :last_name, presence: true
+
+
+  def admin?
+    role == 'admin'
+  end
+
+  def owner?
+    role == 'owner' || company.present?
+  end
 end
