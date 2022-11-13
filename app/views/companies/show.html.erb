@@ -1,1 +1,9 @@
 <h2> <%= @company.name %> </h2>
+
+
+<script type="application/ld+json">
+  <% @company.reviews.each do |r| %>
+    <% review = ReviewPresenter.new(r) %>
+      <%= review.to_schema.to_json.html_safe %>
+  <% end %>
+</script>
