@@ -1,5 +1,6 @@
 class CompaniesController < ApplicationController
-    before_action :set_company, only: [:edit ]
+    skip_before_action :authenticate_user!, only: [:show]
+    before_action :set_company, only: [:edit, :show ]
 
     def index
         @companies = Company.all
