@@ -10,27 +10,27 @@ class ReviewPresenter < SimpleDelegator
       '@type': 'Review',
       'itemReviewed': {
         '@type': 'Organization',
-        'image': model.company.image,
-        'name': model.company.name,
+        'image': @model.company.image,
+        'name': @model.company.name,
         'id': 'company url schema like Trustpilot',
         'url': 'company show url',
-        'sameAs': model.company.website,
-        'address' :{
+        'sameAs': @model.company.website,
+        'address': {
           '@type': 'PostalAddress',
-          'streetAddress': model.company.address,
-          'addressCountry': model.company.country # To be changed to 2 digit.
+          'streetAddress': @model.company.address,
+          'addressCountry': @model.company.country # To be changed to 2 digit.
         }
       },
       'author': {
         '@type': 'Person',
-        'name': model.user.first_name
+        'name': @model.user.first_name
       },
-      'datePublished': model.updated_at.to_time.iso8601,
-      'headline': model.title,
-      'reviewBody': model.description,
+      'datePublished': @model.updated_at.to_time.iso8601,
+      'headline': @model.title,
+      'reviewBody': @model.description,
       'reviewRating': {
         '@type': 'Rating',
-        'ratingValue': model.rating,
+        'ratingValue': @model.score,
         'bestRating': 5,
         'worstRating': 1
       },
