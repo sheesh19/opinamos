@@ -1,4 +1,16 @@
 <h1>Opinamos</h1>
 <p>Review Review Review!</p>
 
+<div class="w-25">
+    <%= form_with url: companies_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Search for companies"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+</div>
+
 <%= link_to 'All Companies', companies_path, class: 'btn btn-primary' %>
+

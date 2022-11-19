@@ -33,6 +33,7 @@ gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
 gem "rails_admin", "~> 3.0"
+gem "pg_search"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
