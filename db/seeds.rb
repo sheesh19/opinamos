@@ -46,7 +46,7 @@ puts 'Creating 20 fake reviews...'
     user_id: User.all.sample.id,
     company_id: Company.all.sample.id,
     description: Faker::TvShows::FamilyGuy.quote,
-    score: rand(0..5)
+    score: rand(1..5)
   )
   reviews.save!
 end
