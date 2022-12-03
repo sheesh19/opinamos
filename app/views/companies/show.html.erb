@@ -2,8 +2,20 @@
 
 
 <script type="application/ld+json">
+  <% graph = [] %>
+
+  <% company = LocalBusinessPresenter.new(@company) %>
+  <% graph.append(company.to_schema) %>
+
   <% @company.reviews.each do |r| %>
     <% review = ReviewPresenter.new(r) %>
-      <%= review.to_schema.to_json.html_safe %>
+    <% graph.append(review.to_schema) %>
   <% end %>
+
+  <% schema = {
+    "@context": "https://schema.org",
+    "@graph": graph
+    } %>
+  <%= schema.to_json.html_safe %>
+
 </script>

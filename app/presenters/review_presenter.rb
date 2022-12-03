@@ -6,14 +6,14 @@ class ReviewPresenter < SimpleDelegator
 
   def to_schema
     schema = {
-      '@context': 'https://schema.org/',
       '@type': 'Review',
+      '@id': 'review id url',
       'itemReviewed': {
         '@type': 'Organization',
         'image': @model.company.image,
         'name': @model.company.name,
-        'id': 'company url schema like Trustpilot',
-        'url': 'company show url',
+        '@id': 'x', #company url schema like Trustpilot
+        'url': 'x', #company show url
         'sameAs': @model.company.website,
         'address': {
           '@type': 'PostalAddress',
@@ -38,7 +38,8 @@ class ReviewPresenter < SimpleDelegator
         '@type': 'Organization',
         'name': 'Opinamos',
         'sameAs': 'https://www.opinamos.io/'
-      }
+      },
+      'inLanguage': 'es'
     }
   end
 end
