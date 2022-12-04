@@ -1,6 +1,6 @@
-class ReviewPresenter < SimpleDelegator
+class ProductReviewPresenter < SimpleDelegator
   def initialize(model)
-    @model = model # Review.
+    @model = model # Product review.
     super(@model)
   end
 
@@ -9,17 +9,12 @@ class ReviewPresenter < SimpleDelegator
       '@type': 'Review',
       '@id': 'review id url',
       'itemReviewed': {
-        '@type': 'Organization',
-        'image': @model.company.image,
-        'name': @model.company.name,
-        '@id': 'x', #company url schema like Trustpilot
-        'url': 'x', #company show url
-        'sameAs': @model.company.website,
-        'address': {
-          '@type': 'PostalAddress',
-          'streetAddress': @model.company.address,
-          'addressCountry': @model.company.country # To be changed to 2 digit.
-        }
+        '@type': 'Product',
+        'image': @model.product.image,
+        'name': @model.product.name,
+        '@id': 'x', #product url schema like Trustpilot
+        'url': 'x', #product show url
+        'sameAs': @model.product.website
       },
       'author': {
         '@type': 'Person',

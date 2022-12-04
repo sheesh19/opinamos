@@ -10,6 +10,7 @@
   <% @company.reviews.each do |r| %>
     <% review = ReviewPresenter.new(r) %>
     <% graph.append(review.to_schema) %>
+    <% # This needs to be generated only for the reviews of the page. %>
   <% end %>
 
   <% schema = {
