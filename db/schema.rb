@@ -107,7 +107,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_17_022608) do
   create_table "reviews", force: :cascade do |t|
     t.string "title"
     t.string "image"
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.bigint "company_id", null: false
     t.string "order_id"
     t.string "source"

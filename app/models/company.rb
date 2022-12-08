@@ -11,4 +11,5 @@ class Company < ApplicationRecord
     }
 
   validates :name, :email, :country, :website, presence: true
+
 end

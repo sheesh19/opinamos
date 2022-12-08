@@ -1,0 +1,10 @@
+<h4>Add a new review!</h4>
+
+<%= simple_form_for [@company, @review] do |f| %>
+    <%= f.input :title %>
+    <%= f.input :order_id %>
+    <%= f.input :description %>
+    <%= f.input :score %>
+    <%#= f.input :email %>
+    <%= f.submit "Submit Review", class: "btn btn-primary" %>
+<% end %>
