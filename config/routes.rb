@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   resource :dashboard, only: :show
   resource :subscription, only: :show
   
-  resources :companies, only: [ :index, :show, :edit, :update ]
+  resources :companies, only: [ :index, :show, :edit, :update ] do
+    resources :reviews, only: [ :new, :create ]
+  end
 end

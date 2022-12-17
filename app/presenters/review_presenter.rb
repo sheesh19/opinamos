@@ -23,7 +23,7 @@ class ReviewPresenter < SimpleDelegator
       },
       'author': {
         '@type': 'Person',
-        'name': @model.user.first_name
+        'name': @model.user ? @model.user.first_name : 'Anonymous'
       },
       'datePublished': @model.updated_at.to_time.iso8601,
       'headline': @model.title,
