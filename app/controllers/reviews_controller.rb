@@ -9,9 +9,10 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    @review.company = @company
-    @review.status = 'unverified'
-    @review.source = 'website'
+    @review.company             = @company
+    @review.verification_status = 'unverified'
+    @review.source              = 'website'
+    # @review.user                = User.find_or_create_by(email: review_params[:email])
 
     if @review.save
       redirect_to company_path(@company)
@@ -27,6 +28,6 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-    params.require(:review).permit(:title, :description, :order_id, :score)
+    params.require(:review).permit(:title, :description, :order_id, :score, :email)
   end
 end
